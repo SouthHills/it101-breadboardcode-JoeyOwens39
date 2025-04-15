@@ -2,6 +2,7 @@ from gpiozero import LED as LEDClass # Alias
 import time
 
 LED = LEDClass(17)  # define led
+LED2 = LEDClass(18)
 
 def loop():
     global LED
@@ -11,7 +12,10 @@ def loop():
         time.sleep(1)
         LED.off()
         print ("led turned off <<<")
+        LED2.on()
+        print ("led2 turned on >>>")
         time.sleep(1)
+        LED2.off()
         
 def destroy():
     global LED
